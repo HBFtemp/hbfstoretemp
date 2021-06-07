@@ -73,12 +73,9 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
+                    InlineKeyboardButton("😊 About Me", url = "https://t.me/joinchat/kekASGjj-6w2NWNl"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]
-                [
-                    InlineKeyboardButton("😊 Join Now", url="https://t.me/joinchat/kekASGjj-6w2NWNl")
-                ]    
+                ] 
             ]
         )
         await message.reply_text(

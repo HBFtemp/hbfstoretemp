@@ -78,6 +78,7 @@ async def start_command(client: Client, message: Message):
                 ]
                 [
                     InlineKeyboardButton("😊 Join Now", url="https://t.me/joinchat/kekASGjj-6w2NWNl")
+                ]    
             ]
         )
         await message.reply_text(

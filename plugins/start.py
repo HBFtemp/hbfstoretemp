@@ -1,4 +1,4 @@
-#(©)Codexbotz
+#(©)hbfadmin
 
 import asyncio
 from pyrogram import Client, filters, __version__
@@ -73,7 +73,7 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 Join Now", url = "https://t.me/joinchat/kekASGjj-6w2NWNl"),
+                    InlineKeyboardButton("😊 Join Now", url = client.invitelink),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
                 ] 
             ]
@@ -94,14 +94,14 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    text = "<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>"
+    text = "<b>✖️ The file owner has set a subscription only-access restriction.\nSubscribe to </b>"
     message_text = message.text
     try:
         command, argument = message_text.split()
-        text = text + f" <b>and <a href='https://t.me/{client.username}?start={argument}'>try again</a></b>"
+        text = text + f" <b>and <a href='https://t.me/hollybolly_films'>HollyBolly Films</a> and press the button Joined</b>"
     except ValueError:
         pass
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url = client.invitelink), InlineKeyboardButton("Joined", url = f"https://t.me/{client.username}?start={argument}")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Subscribe", url = client.invitelink), InlineKeyboardButton("Joined", url = f"https://t.me/{client.username}?start={argument}")]])
     await message.reply(
         text = text,
         reply_markup = reply_markup,
